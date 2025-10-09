@@ -2,7 +2,7 @@ import pandas as pd
 import random
 from .Carro import Carro
 from datetime import timedelta
-import matplotlib.pyplot as plt
+
 class SimulacionCarros:
     def __init__(self, fecha_inicio, fecha_fin, freq="1T"):
         self.fecha_inicio = pd.to_datetime(fecha_inicio)

@@ -40,7 +40,7 @@ Nota: Verás que el prompt cambia indicando que estás dentro del entorno virtua
 Con el entorno virtual activado, instala los paquetes necesarios:
 
 
-pip install Django djangorestframework pandas
+pip install Django djangorestframework pandas django-cors-headers
 
 6. Ejecutar el Servidor de Desarrollo
 
