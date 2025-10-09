@@ -1,0 +1,51 @@
+Instrucciones de Instalación – Frontend
+1. Requisitos Previos
+
+Antes de instalar, asegúrate de tener:
+
+Node.js (versión 18 o superior recomendada)
+
+npm (viene con Node.js)
+
+2. Navegar al Directorio del Frontend
+cd ruta/al/proyecto/simulacion_vial/frontend
+
+3. Instalar Dependencias
+
+Si tu proyecto tiene un package.json (React puro sin frameworks adicionales):
+
+npm install
+
+
+Esto instalará React y cualquier librería incluida en package.json.
+Inicia el servidor de desarrollo:
+
+npm start
+
+
+Se abrirá automáticamente en tu navegador:
+
+http://localhost:3000
+
+No olvide tener corriendo el back al mismo tiempo
+
+Ingresa las fechas y horas de inicio y fin de la simulación, luego haz clic en “Iniciar Simulación”.
+
+El botón cambiará a “Cancelar Simulación” mientras corre.
+
+Los paneles mostrarán los vehículos y la vía reversible en tiempo real.
+
+6. Control de Simulación
+
+Puedes detener la simulación en cualquier momento presionando “Cancelar Simulación”.
+
+El reloj central mostrará el avance de la fecha y hora simulada.
+
+Indicadores visuales (colores o cambios en los paneles) resaltarán horas pico o saturación de vehículos.
+
+7. Notas Adicionales
+
+Cada segundo de la aplicación puede representar varios minutos de simulación. Esto se controla en el código de actualización de setInterval dentro de App.jsx.
+
+Para modificar la velocidad de simulación, ajusta el valor del intervalo y la cantidad de minutos que representa cada segundo.
+

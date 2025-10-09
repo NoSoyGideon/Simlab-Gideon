@@ -1,0 +1,54 @@
+Instrucciones de Instalación – Backend
+1. Requisitos Previos
+
+Antes de instalar, asegúrate de tener:
+
+	Python 3.11 o superior
+
+	pip (gestor de paquetes de Python)
+
+	Git (opcional, si vas a clonar el repositorio)
+
+2. Crear y Activar Entorno Virtual
+
+Navega al directorio del proyecto:
+
+cd ruta/al/proyecto/SimuladorCircunvalacionUno/back
+
+
+Crea un entorno virtual:
+
+python -m venv venv
+
+
+Activa el entorno virtual:
+
+En Windows:
+
+venv\Scripts\activate
+
+
+En macOS / Linux:
+
+source venv/bin/activate
+
+
+Nota: Verás que el prompt cambia indicando que estás dentro del entorno virtual.
+
+3. Instalar Dependencias
+
+Con el entorno virtual activado, instala los paquetes necesarios:
+
+
+pip install Django djangorestframework pandas
+
+6. Ejecutar el Servidor de Desarrollo
+
+Inicia el backend en modo local:
+
+python manage.py runserver
+
+
+Por defecto, estará disponible en: http://127.0.0.1:8000/
+
+El endpoint principal de la simulación: http://127.0.0.1:8000/api/simular/
