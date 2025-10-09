@@ -30,6 +30,7 @@ function esHoraPico(fecha, sentido) {
   return false;
 }
 
+
 function App() {
   const [inicio, setInicio] = useState("");
   const [fin, setFin] = useState("");
@@ -43,12 +44,12 @@ function App() {
   const [viaDin, setViaDin] = useState({ num: 0, progreso: 0, sentido: -1 });
   const [fechaActual, setFechaActual] = useState("");
   const [velocidad, setVelocidad] = useState(1000); // 1000ms = 1 minuto de simulación
+  const [cargando, setCargando] = useState(false);
+  const [error, setError] = useState("");
   const MAX_CARROS = 125;
 
   const iniciarSimulacion = async () => {
-
     if (!inicio || !fin) return alert("Por favor ingresa fechas válidas");
-    // Validar que la fecha/hora de fin no sea menor que la de inicio
     if (new Date(fin) < new Date(inicio)) {
       alert("La fecha y hora de fin no puede ser menor que la de inicio");
       return;
@@ -57,17 +58,22 @@ function App() {
     if (!simulando) {
       setSimulando(true);
       setIndex(0);
-
+      setCargando(true);
+      setError("");
       try {
         const API_HOST = "http://localhost:8000"; //https://simuladorcircunvalacionuno-j6yq.onrender.com
         const res = await fetch(
           `${API_HOST}/api/simulacion_carros/?inicio=${inicio}&fin=${fin}`
         );
+        if (!res.ok) throw new Error("Error al obtener datos de la API");
         const json = await res.json();
         setData(json);
+        setCargando(false);
       } catch (err) {
         console.error(err);
+        setError("Error al cargar datos. Intenta de nuevo.");
         setSimulando(false);
+        setCargando(false);
       }
     } else {
       // Cancelar simulación
@@ -79,6 +85,8 @@ function App() {
       setViaSN({ num: 0, progreso: 0 });
       setViaDin({ num: 0, progreso: 0, sentido: -1 });
       setFechaActual("");
+      setError("");
+      setCargando(false);
     }
   };
 
@@ -185,7 +193,7 @@ function App() {
       background: "#fff",
       minHeight: "100vh",
       padding: "20px",
-      paddingTop: "150px" // <-- baja todo menos el menú
+      paddingTop: "150px"
     }}>
       {/* Menu flotante */}
       <div style={menuStyle}>
@@ -223,6 +231,18 @@ function App() {
             onChange={(e) => setVelocidad(Number(e.target.value))}
           />
         </div>
+
+        {/* Mensaje de cargando y error */}
+        {cargando && (
+          <div style={{ marginTop: "15px", color: "#333", fontWeight: "bold" }}>
+            Cargando datos...
+          </div>
+        )}
+        {error && (
+          <div style={{ marginTop: "15px", color: "red", fontWeight: "bold" }}>
+            {error}
+          </div>
+        )}
       </div>
 
       {/* Fecha central */}

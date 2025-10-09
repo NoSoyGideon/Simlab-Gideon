@@ -16,7 +16,6 @@ Si tu proyecto tiene un package.json (React puro sin frameworks adicionales):
 
 npm install
 
-
 Esto instalará React y cualquier librería incluida en package.json.
 
 Inicia el servidor de desarrollo:
