@@ -1,0 +1,2 @@
+# SimuladorCircunvalacionUno
+Se desea aplicar un proceso de simulación de sistemas a los efectos de resolver un problema que aqueja a la colectividad de usuarios de la vía rápida (circunvalación  1)  de la ciudad de Maracaibo, Estado Zulia. En relación a la problemática existente actualmente se requiere instrumentar medidas que solucionen la saturación de vehículos automotores y transito general por las limitaciones espaciales del trazado vial en cuestión.
