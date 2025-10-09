@@ -1,0 +1,22 @@
+/* src/App.css */
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, select {
+  padding: 0.3rem;
+  margin-left: 0.5rem;
+  min-width: 150px;
+}
