@@ -59,7 +59,7 @@ function App() {
       setIndex(0);
 
       try {
-        const API_HOST = "http://localhost:8000";
+        const API_HOST = "http://localhost:8000"; //https://simuladorcircunvalacionuno-j6yq.onrender.com
         const res = await fetch(
           `${API_HOST}/api/simulacion_carros/?inicio=${inicio}&fin=${fin}`
         );
