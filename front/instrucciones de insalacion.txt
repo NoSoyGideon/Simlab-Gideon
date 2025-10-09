@@ -8,7 +8,7 @@ Node.js (versión 18 o superior recomendada)
 npm (viene con Node.js)
 
 2. Navegar al Directorio del Frontend
-cd ruta/al/proyecto/simulacion_vial/frontend
+cd \SimuladorCircunvalacionUno\front\simulacion
 
 3. Instalar Dependencias
 
@@ -18,10 +18,10 @@ npm install
 
 
 Esto instalará React y cualquier librería incluida en package.json.
+
 Inicia el servidor de desarrollo:
 
 npm start
-
 
 Se abrirá automáticamente en tu navegador:
 
