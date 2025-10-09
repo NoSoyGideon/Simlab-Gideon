@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-2z*vm6(klnyltw#^7b8zaq(#n88-79(g^oz50g@@s6h1+uy=e@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'simuladorcircunvalacionuno-j6yq.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -54,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'simulador.urls'
@@ -92,7 +96,7 @@ DATABASES = {
     }
 }
 
-CORS_ALLOW_ALL_ORIGINS = True # Use with caution, primarily for development
+CORS_ALLOW_ALL_ORIGINS = True  # Use with caution, primarily for development
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 

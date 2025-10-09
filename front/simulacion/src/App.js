@@ -46,15 +46,22 @@ function App() {
   const MAX_CARROS = 125;
 
   const iniciarSimulacion = async () => {
+
     if (!inicio || !fin) return alert("Por favor ingresa fechas válidas");
+    // Validar que la fecha/hora de fin no sea menor que la de inicio
+    if (new Date(fin) < new Date(inicio)) {
+      alert("La fecha y hora de fin no puede ser menor que la de inicio");
+      return;
+    }
 
     if (!simulando) {
       setSimulando(true);
       setIndex(0);
 
       try {
+        const API_HOST = "http://localhost:8000";
         const res = await fetch(
-          `http://localhost:8000/api/simulacion_carros/?inicio=${inicio}&fin=${fin}`
+          `${API_HOST}/api/simulacion_carros/?inicio=${inicio}&fin=${fin}`
         );
         const json = await res.json();
         setData(json);
@@ -174,12 +181,12 @@ function App() {
   };
 
   return (
-  <div style={{ 
-    background: "#fff", 
-    minHeight: "100vh", 
-    padding: "20px",
-    paddingTop: "150px" // <-- baja todo menos el menú
-  }}>
+    <div style={{
+      background: "#fff",
+      minHeight: "100vh",
+      padding: "20px",
+      paddingTop: "150px" // <-- baja todo menos el menú
+    }}>
       {/* Menu flotante */}
       <div style={menuStyle}>
         <div>
