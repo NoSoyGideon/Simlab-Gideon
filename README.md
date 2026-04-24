@@ -31,8 +31,4 @@
 - Docker + Docker Compose
 - Git
 
-### 1. Clonar repositorio
 
-```bash
-git clone https://github.com/[tu-usuario]/simularium.git
-cd simularium
