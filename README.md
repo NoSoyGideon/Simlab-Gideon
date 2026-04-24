@@ -1,4 +1,4 @@
-# 🧪 Simularium
+# 🧪 Simlab-Gideon
 
 **Laboratorio de simulaciones de sistemas** — Backend Django + Celery + Redis | Frontend React
 
